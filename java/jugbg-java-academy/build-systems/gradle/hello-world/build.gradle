@@ -1,0 +1,27 @@
+/*
+  Run:
+    gradle hello
+    gradle bye
+
+  Notice both `hello` and `bye` are executed in configuration, 
+    but only requested (and dependent) doLast captures are executed as tasks
+
+  List tasks:
+    gradle tasks  
+*/
+
+plugins {
+  id 'java-gradle-plugin'
+  // id 'maven-publish'
+  // id 'java'
+}
+
+task hello {
+  println 'configure hello'
+  doLast { println 'execute hello' }
+}
+
+task bye(dependsOn: hello) {
+  println 'configure bye'
+  doLast { println 'execute bye' }
+}

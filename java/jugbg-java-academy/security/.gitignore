@@ -1,0 +1,7 @@
+__*
+*.class
+bin
+deploy
+secret
+certs
+local/.keystore

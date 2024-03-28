@@ -1,0 +1,5 @@
+keystore "file:./local/.keystore";
+
+grant codeBase "file:./deploy/count.jar", signedBy "spamfro" {
+  permission java.io.FilePermission "./data/*", "read";
+};
